@@ -5,7 +5,8 @@
 {% block content %}
     <p>Add blog post</p>
     <form method='POST'>
-        <label for="title">Title:</label><br>
+      {% csrf_token %}
+      <label for="title">Title:</label><br>
         <input type="text" id="title" name="title" ><br><br><br>
         <label for="body">Write Something:</label><br>
         <textarea type="text" id="body" name="body" rows="10" cols="50"> </textarea> <br><br>

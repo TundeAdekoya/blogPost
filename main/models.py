@@ -10,7 +10,7 @@ from .managers import PublishedManager
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models(max_length=255, null=True)
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now, )
     created = models.DateTimeField(auto_now_add=True, )
